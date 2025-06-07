@@ -10,12 +10,12 @@ def akshare_selector_ui() -> AkshareParams:
 
     :return: AkshareParams
     """
-    st.sidebar.markdown("# Akshare Config")
+    st.sidebar.markdown("# Akshare 配置")
     symbol = st.sidebar.text_input("symbol")
     period = st.sidebar.selectbox("period", ("daily", "weekly", "monthly"))
-    start_date = st.sidebar.date_input("start date", datetime.date(1970, 1, 1))
+    start_date = st.sidebar.date_input("开始日期", datetime.date(1970, 1, 1))
     start_date = start_date.strftime("%Y%m%d")
-    end_date = st.sidebar.date_input("end date", datetime.datetime.today())
+    end_date = st.sidebar.date_input("结束日期", datetime.datetime.today())
     end_date = end_date.strftime("%Y%m%d")
     adjust = st.sidebar.selectbox("adjust", ("qfq", "hfq", ""))
     return AkshareParams(
